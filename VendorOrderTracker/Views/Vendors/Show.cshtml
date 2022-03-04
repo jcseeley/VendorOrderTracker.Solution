@@ -6,7 +6,11 @@
 
 <h3>@Model["Vendor"].Name</h3>
 <h4>@Model["Vendor"].Description</h4>
-<h5>@Model["Vendor"].Id</h5>
+
+@if (Model["Orders"].Count == 0)
+{
+  <h5>There are no orders to display.</h5>
+} 
 
 <ol>
 @foreach (Order order in @Model["Orders"])

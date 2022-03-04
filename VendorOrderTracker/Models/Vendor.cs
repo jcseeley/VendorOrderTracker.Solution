@@ -7,7 +7,7 @@ namespace VendorOrderTracker.Models
     private static List<Vendor> _instances = new List<Vendor> {};
     public string Name { get; set; }
     public string Description { get; set; }
-    public int Id { get; }
+    public int Id { get; set; }
     public List<Order> Orders { get; }
     public Vendor(string name, string description)
     {
@@ -46,6 +46,17 @@ namespace VendorOrderTracker.Models
     public static void RemoveVendor(int id)
     {
       _instances.Remove(_instances[id-1]);
+      foreach (Vendor vendor in _instances)
+      {
+        if (vendor.Id > id) 
+        {
+          vendor.Id -= 1;
+        }
+        else
+        {
+          vendor.Id = vendor.Id;
+        }
+      }
     }
   }
 }
