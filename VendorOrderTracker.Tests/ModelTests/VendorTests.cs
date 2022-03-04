@@ -89,6 +89,16 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
+    public void SetId_ChangesVendorId_Int()
+    {
+      Vendor newVendor = new Vendor("name", "description");
+      int newId = 3;
+      newVendor.Id = newId;
+      int result = newVendor.Id;
+      Assert.AreEqual(newId, result);
+    }
+
+    [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
       Vendor newVendor = new Vendor("name", "description");
