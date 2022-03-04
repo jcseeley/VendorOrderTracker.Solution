@@ -12,7 +12,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Object()
     {
-      Order newOrder = new Order("test", "test", 0);
+      Order newOrder = new Order("test", "test", 0, "date");
       Assert.AreEqual(typeof(Order), newOrder.GetType()); 
     }
 
@@ -20,7 +20,7 @@ namespace VendorOrderTracker.Tests
     public void GetTitle_ReturnsOrderTitle_String()
     {
       string orderTitle = "Order Title";
-      Order newOrder = new Order(orderTitle, "test", 0);
+      Order newOrder = new Order(orderTitle, "test", 0, "date");
       string result = newOrder.Title;
       Assert.AreEqual(orderTitle, result);
     }
@@ -29,7 +29,7 @@ namespace VendorOrderTracker.Tests
     public void SetTitle_ChangesOrderTitle_String()
     {
       string orderTitle = "Order Title";
-      Order newOrder = new Order(orderTitle, "test", 0);
+      Order newOrder = new Order(orderTitle, "test", 0, "date");
       string updatedTitle = "Different Order Title";
       newOrder.Title = updatedTitle;
       string result = newOrder.Title;
@@ -41,7 +41,7 @@ namespace VendorOrderTracker.Tests
     {
       string orderTitle = "Order Title";
       string orderDescription = "Order Description";
-      Order newOrder = new Order(orderTitle, orderDescription, 0);
+      Order newOrder = new Order(orderTitle, orderDescription, 0, "date");
       string result = newOrder.Description;
       Assert.AreEqual(orderDescription, result);
     }
@@ -51,7 +51,7 @@ namespace VendorOrderTracker.Tests
     {
       string orderTitle = "Order Title";
       string orderDescription = "Order Description";
-      Order newOrder = new Order(orderTitle, orderDescription, 0);
+      Order newOrder = new Order(orderTitle, orderDescription, 0, "date");
       string updatedDescription = "Different Order Description";
       newOrder.Description = updatedDescription;
       string result = newOrder.Description;
@@ -62,20 +62,29 @@ namespace VendorOrderTracker.Tests
     public void GetPrice_GetsOrderPrice_Int()
     {
       int orderPrice = 50;
-      Order newOrder = new Order("test", "test", orderPrice);
+      Order newOrder = new Order("test", "test", orderPrice, "date");
       int result = newOrder.Price;
       Assert.AreEqual(orderPrice, result);
     }
 
     [TestMethod]
-    public void SetPrice_CahngesOrderPrice_Int()
+    public void SetPrice_ChangesOrderPrice_Int()
     {
       int orderPrice = 50;
-      Order newOrder = new Order("test", "test", orderPrice);
+      Order newOrder = new Order("test", "test", orderPrice, "date");
       int updatedPrice = 40;
       newOrder.Price = updatedPrice;
       int result = newOrder.Price;
       Assert.AreEqual(updatedPrice, result);
+    }
+
+    [TestMethod]
+    public void GetDate_GetsOrderDate_String()
+    {
+      string date = "3-4-22";
+      Order newOrder = new Order("test", "test", 0, date);
+      string result = newOrder.Date;
+      Assert.AreEqual(date, result);
     }
   }
 }
