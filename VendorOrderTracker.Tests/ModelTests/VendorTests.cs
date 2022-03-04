@@ -44,5 +44,15 @@ namespace VendorOrderTracker.Tests
       string result = newVendor.Description;
       Assert.AreEqual(vendorDescription, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      Vendor newVendor = new Vendor("name", "description");
+      Vendor newVendor2 = new Vendor("name", "description");
+      List<Vendor> newList = new List<Vendor> { newVendor, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      Assert.AreEqual(newList, result);
+    }
   }
 }
