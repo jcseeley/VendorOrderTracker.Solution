@@ -19,10 +19,20 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetTitle_ReturnsOrderTitle_String()
     {
-      string orderTitle = "Order";
+      string orderTitle = "Order Title";
       Order newOrder = new Order(orderTitle);
       string result = newOrder.Title;
       Assert.AreEqual(orderTitle, result);
+    }
+
+    public void SetTitle_ChangesOrderTitle_String()
+    {
+      string orderTitle = "Order Title";
+      Order newOrder = new Order(orderTitle);
+      string updatedTitle = "Different Order Title";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+      Assert.AreEqual(updatedTitle, result);
     }
   }
 }
