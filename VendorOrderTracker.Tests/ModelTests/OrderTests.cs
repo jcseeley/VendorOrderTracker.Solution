@@ -3,18 +3,18 @@ using System;
 using System.Collections.Generic;
 using VendorOrderTracker.Models;
 
-namespace Order.Tests
+namespace VendorOrderTracker.Tests
 {
   [TestClass]
   public class OrderTests
   {
     
-    // [TestMethod]
-    // public void ClassConstructor_CreatesInstanceOfClass_Object()
-    // {
-    //   Class newObject = new Class("test");
-    //   Assert.AreEqual(typeof(Class), newObject.GetType()); 
-    // }
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrder_Object()
+    {
+      Order newOrder = new Order();
+      Assert.AreEqual(typeof(Order), newOrder.GetType()); 
+    }
   }
 }
 
