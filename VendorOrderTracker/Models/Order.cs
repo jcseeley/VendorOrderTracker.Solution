@@ -9,7 +9,7 @@ namespace VendorOrderTracker.Models
     public Order(string title, string description)
     {
       Title = title;
-      Description = "no";
+      Description = description;
     }
   }
 }
