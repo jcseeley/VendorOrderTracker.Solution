@@ -7,7 +7,7 @@ namespace VendorOrderTracker.Models
     public string Title { get; }
     public Order(string title)
     {
-      Title = "no";
+      Title = title;
     }
   }
 }
