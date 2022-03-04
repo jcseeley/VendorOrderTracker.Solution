@@ -13,7 +13,7 @@ namespace VendorOrderTracker.Models
       Name = name;
       Description = description;
       _instances.Add(this);
-      Id = 2;
+      Id = _instances.Count;
     }
 
     public static List<Vendor> GetAll()
