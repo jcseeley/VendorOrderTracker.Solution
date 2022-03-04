@@ -12,7 +12,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Object()
     {
-      Order newOrder = new Order("test", "test");
+      Order newOrder = new Order("test", "test", 0);
       Assert.AreEqual(typeof(Order), newOrder.GetType()); 
     }
 
@@ -20,7 +20,7 @@ namespace VendorOrderTracker.Tests
     public void GetTitle_ReturnsOrderTitle_String()
     {
       string orderTitle = "Order Title";
-      Order newOrder = new Order(orderTitle, "test");
+      Order newOrder = new Order(orderTitle, "test", 0);
       string result = newOrder.Title;
       Assert.AreEqual(orderTitle, result);
     }
@@ -29,7 +29,7 @@ namespace VendorOrderTracker.Tests
     public void SetTitle_ChangesOrderTitle_String()
     {
       string orderTitle = "Order Title";
-      Order newOrder = new Order(orderTitle, "test");
+      Order newOrder = new Order(orderTitle, "test", 0);
       string updatedTitle = "Different Order Title";
       newOrder.Title = updatedTitle;
       string result = newOrder.Title;
@@ -41,7 +41,7 @@ namespace VendorOrderTracker.Tests
     {
       string orderTitle = "Order Title";
       string orderDescription = "Order Description";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      Order newOrder = new Order(orderTitle, orderDescription, 0);
       string result = newOrder.Description;
       Assert.AreEqual(orderDescription, result);
     }
@@ -51,11 +51,20 @@ namespace VendorOrderTracker.Tests
     {
       string orderTitle = "Order Title";
       string orderDescription = "Order Description";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      Order newOrder = new Order(orderTitle, orderDescription, 0);
       string updatedDescription = "Different Order Description";
       newOrder.Description = updatedDescription;
       string result = newOrder.Description;
       Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
+    public void GetPrice_GetsOrderPrice_Int()
+    {
+      int orderPrice = 50;
+      Order newOrder = new Order("test", "test", orderPrice);
+      int result = newOrder.Price;
+      Assert.AreEqual(orderPrice, result);
     }
   }
 }
