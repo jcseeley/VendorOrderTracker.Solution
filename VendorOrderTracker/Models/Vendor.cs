@@ -43,9 +43,9 @@ namespace VendorOrderTracker.Models
       Orders.Remove(order);
     }
 
-    public static void RemoveVendor(Vendor vendor)
+    public static void RemoveVendor(int Id)
     {
-      _instances.Remove(vendor);
+      _instances.Remove(_instances[Id-1]);
     }
   }
 }

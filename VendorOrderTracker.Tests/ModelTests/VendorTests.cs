@@ -126,7 +126,7 @@ namespace VendorOrderTracker.Tests
       Vendor newVendor = new Vendor("name", "description");
       Vendor newVendor2 = new Vendor("name", "description");
       List<Vendor> newList = new List<Vendor> { newVendor2 };
-      Vendor.RemoveVendor(newVendor);
+      Vendor.RemoveVendor(1);
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }

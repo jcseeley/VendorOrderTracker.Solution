@@ -38,11 +38,11 @@ namespace VendorOrderTracker.Controllers
       return View(model);
     }
 
-    [HttpPost("/vendors/delete")]
-    public ActionResult Delete()
-    {
-    Vendor.ClearAll();
-    return View();
-    }
+    // [HttpPost("/vendors/delete")]
+    // public ActionResult Delete(Vendor vendor)
+    // {
+    // Vendor.RemoveVendor(vendor);
+    // return View();
+    // }
   }
 }
