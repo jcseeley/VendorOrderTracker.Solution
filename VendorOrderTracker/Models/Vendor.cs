@@ -37,5 +37,10 @@ namespace VendorOrderTracker.Models
     {
       Orders.Add(order);
     }
+
+    public void RemoveOrder(Order order)
+    {
+      Orders.Remove(new Order("test", "test", 0, "test"));
+    }
   }
 }

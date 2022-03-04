@@ -107,5 +107,17 @@ namespace VendorOrderTracker.Tests
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void RemoveOrder_RemovesOrderFromVendor_OrderList()
+    {
+      Order newOrder = new Order("title", "description", 0, "date");
+      Vendor newVendor = new Vendor("name", "description");
+      List<Order> newList = new List<Order> {  };
+      newVendor.AddOrder(newOrder);
+      newVendor.RemoveOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
