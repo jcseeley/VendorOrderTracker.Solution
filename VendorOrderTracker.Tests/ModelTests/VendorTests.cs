@@ -50,6 +50,16 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
+    public void SetVendorDescription_ChangesDescriptionOfVendor_String()
+    {
+      Vendor newVendor = new Vendor("name", "description");
+      string updatedDescription = "Different Description";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+      Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
     public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
       Vendor newVendor = new Vendor("name", "description");
