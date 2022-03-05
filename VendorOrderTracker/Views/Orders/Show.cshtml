@@ -4,15 +4,15 @@
 
 <h1>@Model["Vendor"].Name</h1>
 <h2 class="orders">Order Details:</h2>
-<h3>@Model["Order"].Title</h3>
-<h3>Date: @Model["Order"].Date</h3>
-<h3>@Model["Order"].Description</h3>
+<h3>Title: @Model["Order"].Title</h3>
+<h3>Description: @Model["Order"].Description</h3>
 <h3>Price: $@Model["Order"].Price</h3>
+<h3>Date/Frequency: @Model["Order"].Date</h3>
 
 <form action='/orders/delete' method="post">
   <input id="vendorId" name="vendorId" type="hidden" value='@Model["Vendor"].Id'>
   <input id="orderId" name="orderId" type="hidden" value='@Model["Order"].Id'>
-  <button type="submit">Remove Order</button>
+  <button type="submit">Delete Order</button>
 </form>
 <a href='/vendors/@Model["Vendor"].Id/orders/new'>Add Another Order</a><br>
 <a href='/vendors/@Model["Vendor"].Id/orders'>View All Orders</a>
