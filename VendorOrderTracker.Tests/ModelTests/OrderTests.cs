@@ -130,5 +130,15 @@ namespace VendorOrderTracker.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void SetId_ChangesOrderId_Int()
+    {
+      Order newOrder = new Order("title", "description", 0, "date");
+      int newId = 2;
+      newOrder.Id = newId;
+      int result = newOrder.Id;
+      Assert.AreEqual(newId, result);
+    }
   }
 }
