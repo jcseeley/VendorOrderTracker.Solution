@@ -2,17 +2,17 @@
   Layout = "_Layout";
 }
 
-<h2>@Model["Vendor"].Name</h2>
-<h3>Order Details: </h3>
-<h4>@Model["Order"].Title</h4>
-<h4>Date: @Model["Order"].Date</h4>
-<h4>@Model["Order"].Description</h4>
-<h4>Price: $@Model["Order"].Price</h4>
+<h1>@Model["Vendor"].Name</h1>
+<h2 class="orders">Order Details:</h2>
+<h3>@Model["Order"].Title</h3>
+<h3>Date: @Model["Order"].Date</h3>
+<h3>@Model["Order"].Description</h3>
+<h3>Price: $@Model["Order"].Price</h3>
 
-<a href='/vendors/@Model["Vendor"].Id/orders/new'>Add Another Order</a><br>
-<a href='/vendors/@Model["Vendor"].Id/orders'>View All Orders</a><br>
 <form action='/orders/delete' method="post">
   <input id="vendorId" name="vendorId" type="hidden" value='@Model["Vendor"].Id'>
   <input id="orderId" name="orderId" type="hidden" value='@Model["Order"].Id'>
   <button type="submit">Remove Order</button>
 </form>
+<a href='/vendors/@Model["Vendor"].Id/orders/new'>Add Another Order</a><br>
+<a href='/vendors/@Model["Vendor"].Id/orders'>View All Orders</a>

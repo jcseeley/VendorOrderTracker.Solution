@@ -7,7 +7,7 @@
 <h1>@Model["Vendor"].Name</h1>
 <h2>Description: @Model["Vendor"].Description</h2>
 
-<h2 id="orders">Orders:</h2>
+<h2 class="orders">Orders:</h2>
 @if (Model["Orders"].Count == 0)
 {
   <h3>There are no orders to display.</h3>
@@ -21,9 +21,9 @@
   }
 }
 
+<a href='/vendors/@Model["Vendor"].Id/orders/new'><button>Add Order</button></a>
 <form action='/vendors/delete' method="post">
   <input id="id" name="id" type="hidden" value='@Model["Vendor"].Id'>
   <button type="submit">Delete Vendor</button>
 </form>
-<a href='/vendors/@Model["Vendor"].Id/orders/new'>Add An Order</a><br>
 <a href='/vendors'>Return To Vendor List</a>
