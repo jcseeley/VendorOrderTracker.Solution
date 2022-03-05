@@ -108,5 +108,16 @@ namespace VendorOrderTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void ClearAll_ClearsAllOrderObjects_OrderList()
+    {
+      Order newOrder = new Order("title", "description", 0, "date");
+      Order newOrder2 = new Order("title", "description", 0, "date");
+      List<Order> newList = new List<Order> { };
+      Order.ClearAll();
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
