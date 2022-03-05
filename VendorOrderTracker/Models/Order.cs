@@ -9,6 +9,7 @@ namespace VendorOrderTracker.Models
     public string Description { get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
+    public int Id { get; }
     public Order(string title, string description, int price, string date)
     {
       Title = title;
@@ -16,6 +17,7 @@ namespace VendorOrderTracker.Models
       Price = price;
       Date = date;
       _instances.Add(this);
+      Id = 0;
     }
 
     public static List<Order> GetAll()
