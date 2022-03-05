@@ -1,0 +1,24 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1001&q=80);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: black;
+  text-align: center;
+  color: blanchedalmond;
+  font-family: cursive;
+  font-size: large;
+}
+
+a {
+  color: chocolate;
+  
+}
+
+a:hover {
+  color: burlywood;
+}
+
+.container {
+  margin-top: 300px;
+  max-width: 525px;
+}
