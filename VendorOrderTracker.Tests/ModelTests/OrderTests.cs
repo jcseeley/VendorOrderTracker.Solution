@@ -140,5 +140,14 @@ namespace VendorOrderTracker.Tests
       int result = newOrder.Id;
       Assert.AreEqual(newId, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      Order newOrder = new Order("title", "description", 0, "date");
+      Order newOrder2 = new Order("title", "description", 0, "date");
+      Order result = newOrder.Find(1);
+      Assert.AreEqual(newOrder, result);
+    }
   }
 }
