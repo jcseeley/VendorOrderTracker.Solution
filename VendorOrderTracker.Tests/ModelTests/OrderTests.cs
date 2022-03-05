@@ -97,5 +97,16 @@ namespace VendorOrderTracker.Tests
       string result = newOrder.Date;
       Assert.AreEqual(updatedDate, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllOrderObjects_OrderList()
+    {
+      Order newOrder = new Order("title", "description", 0, "date");
+      Order newOrder2 = new Order("title", "description", 0, "date");
+      List<Order> newList = new List<Order> { newOrder, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
