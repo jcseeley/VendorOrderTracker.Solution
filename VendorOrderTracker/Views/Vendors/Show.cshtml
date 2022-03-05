@@ -4,20 +4,23 @@
 
 @using VendorOrderTracker.Models;
 
-<h3>@Model["Vendor"].Name</h3>
-<h4>@Model["Vendor"].Description</h4>
+<h3>Vendor: @Model["Vendor"].Name</h3>
+<h4>Description: @Model["Vendor"].Description</h4>
 
 @if (Model["Orders"].Count == 0)
 {
   <h5>There are no orders to display.</h5>
 } 
 
-<ol>
-@foreach (Order order in @Model["Orders"])
+@if (Model["Orders"].Count >= 1)
 {
-  <li><a href='/vendors/@Model["Vendor"].Id/orders/@order.Title'>@order.Description</a></li>
+  <ol>
+  @foreach (Order order in @Model["Orders"])
+  {
+    <li><a href='/vendors/@Model["Vendor"].Id/orders/@order.Title'>@order.Description</a></li>
+  }
+  </ol>
 }
-</ol>
 
 <a href='/vendors/@Model["Vendor"].Id/orders/new'>Add A New Order</a><br>
 <a href='/vendors'>Return To Vendor List</a>

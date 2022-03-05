@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Controllers
 {
