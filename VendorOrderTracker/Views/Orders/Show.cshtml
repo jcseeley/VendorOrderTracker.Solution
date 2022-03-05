@@ -14,5 +14,6 @@
   <input id="orderId" name="orderId" type="hidden" value='@Model["Order"].Id'>
   <button type="submit">Delete Order</button>
 </form>
-<a href='/vendors/@Model["Vendor"].Id/orders/new'>Add Another Order</a><br>
-<a href='/vendors/@Model["Vendor"].Id/orders'>View All Orders</a>
+<a href='/vendors/@Model["Vendor"].Id/orders/new'><button>Add Another Order</button></a><br>
+<a href='/vendors/@Model["Vendor"].Id/orders'>View All Orders</a><br>
+<a href="/vendors">Back to Vendor List</a>
