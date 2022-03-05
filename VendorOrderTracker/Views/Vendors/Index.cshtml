@@ -8,7 +8,7 @@
 
 @if (Model.Count == 0)
 {
-  <h3>There are no vendors on your list.</h3>
+  <h2>There are no vendors on your list.</h2>
 }
 
 @if (Model.Count >= 1)
@@ -19,4 +19,5 @@
   }
 }
 
-<a href='/vendors/new'><button>Add A Vendor</button></a>
+<a href='/vendors/new'><button>Add A Vendor</button></a><br>
+<a href='/'>Back to Home</a>
