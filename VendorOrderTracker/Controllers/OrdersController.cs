@@ -24,5 +24,14 @@ namespace VendorOrderTracker.Controllers
       model.Add("Vendor", vendor);
       return View(model);
     }
+
+    [HttpPost("/orders/delete")]
+    public ActionResult Delete(int orderId, int vendorId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      vendor.RemoveOrder(order);
+      return View();
+    }
   }
 }
