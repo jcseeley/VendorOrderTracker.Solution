@@ -30,7 +30,7 @@ namespace VendorOrderTracker.Models
       _instances.Clear();
     }
 
-    public Order Find(int searchId)
+    public static Order Find(int searchId)
     {
       return _instances[searchId-1];
     }

@@ -146,7 +146,7 @@ namespace VendorOrderTracker.Tests
     {
       Order newOrder = new Order("title", "description", 0, "date");
       Order newOrder2 = new Order("title", "description", 0, "date");
-      Order result = newOrder.Find(1);
+      Order result = Order.Find(1);
       Assert.AreEqual(newOrder, result);
     }
   }

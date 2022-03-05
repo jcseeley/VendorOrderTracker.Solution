@@ -14,15 +14,15 @@ namespace VendorOrderTracker.Controllers
       return View(vendor);
     }
 
-    // [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
-    // public ActionResult Show(int vendorId, int orderId)
-    // {
-    //   Item item = Item.Find(itemId);
-    //   Category category = Category.Find(categoryId);
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   model.Add("item", item);
-    //   model.Add("category", category);
-    //   return View(model);
-    // }
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("Order", order);
+      model.Add("Vendor", vendor);
+      return View(model);
+    }
   }
 }
