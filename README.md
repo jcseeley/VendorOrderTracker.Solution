@@ -2,7 +2,8 @@
 
 #### By Jase Seeley
 
-#### A web application to keep track of your vendors and their orders.
+#### Epicodus Week #9 Independent Code Review: Basic Web Applications  
+* A web application to keep track of your vendors and their orders.
 
 ## Technologies Used
 * C#
