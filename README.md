@@ -2,8 +2,12 @@
 
 #### By Jase Seeley
 
-#### Epicodus Week #9 Independent Code Review: Basic Web Applications  
-* A web application to keep track of your vendors and their orders.
+#### Epicodus Week #9 Independent Code Review: Basic Web Applications with TDD  
+* A web application to keep track of your vendors and their orders. Fully tested with MSTest.
+
+![Suzy List](./SuzyList.png)
+
+![Test results](./VendorTests.png)
 
 ## Technologies Used
 * C#
